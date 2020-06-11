@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>aspnet-AllSafe-0DFE9FAF-01B7-49F3-B96E-FE1DC5EAF8C8</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AllSafe.Infrastructure\AllSafe.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
