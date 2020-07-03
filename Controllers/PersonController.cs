@@ -2,56 +2,59 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AllSafe.Application.Interfaces;
 using AllSafe.DataAccess.Entities;
 using AllSafe.Service.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace AllSafe.Controllers
+namespace AllSafe.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class PersonController : ControllerBase
     {
-        private readonly IPersonRepository _person;
-       
-        public PersonController(IPersonRepository person)
+        private readonly IUnitOfWork _unitofwork;
+        public PersonController(IUnitOfWork unitofwork)
         {
-            _person = person;
+            _unitofwork = unitofwork;
         }
 
         // GET: api/<PersonController>
         [HttpGet]
-        public async Task<IEnumerable<Person>> Get()
+        public Task<IEnumerable<Person>> Get()
         {
-            return await _person.GetAll();
+            return _unitofwork.Person.GetAll();
         }
 
         // GET api/<PersonController>/5
         [HttpGet("{id}")]
-        public async Task<Person> Get(string id)
+        public Task<Person> Get(string id)
         {
-            return await _person.Get(id);
+            return _unitofwork.Person.GetPersonById(id);
         }
 
         // POST api/<PersonController>
         [HttpPost]
-        public async Task<Person> Post([FromBody] Person entity)
+        public Task Post([FromBody] Person entity)
         {
-            return await _person.Add(entity);
+            return _unitofwork.Person.Save(entity);
         }
 
         // PUT api/<PersonController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public Task Put(string id,[FromBody] Person entity)
         {
+            return _unitofwork.Person.Put(id,entity);
         }
 
         // DELETE api/<PersonController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public Task Delete(string id)
         {
+            return _unitofwork.Person.Delete(id);
         }
     }
 }

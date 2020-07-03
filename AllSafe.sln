@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.30128.36
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AllSafe.Api", "AllSafe.Api.csproj", "{9486DF0E-7D17-4DF3-AB52-2AF0AC9DAA75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllSafe.DataAccess", "..\AllSafe.Data\AllSafe.DataAccess.csproj", "{D0DF6F01-420C-4EC7-B405-A832CED12049}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AllSafe.DataAccess", "..\AllSafe.Data\AllSafe.DataAccess.csproj", "{D0DF6F01-420C-4EC7-B405-A832CED12049}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllSafe.Application", "..\AllSafe.Service\AllSafe.Application.csproj", "{5FCD9274-2BF8-413F-ACF3-3ECEB9973E66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AllSafe.Application", "..\AllSafe.Service\AllSafe.Application.csproj", "{5FCD9274-2BF8-413F-ACF3-3ECEB9973E66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllSafe.Infrastructure", "..\AllSafe.Infrastructure\AllSafe.Infrastructure.csproj", "{20D404F2-9803-41F3-A89C-F433A5FD75AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AllSafe.Infrastructure", "..\AllSafe.Infrastructure\AllSafe.Infrastructure.csproj", "{20D404F2-9803-41F3-A89C-F433A5FD75AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
